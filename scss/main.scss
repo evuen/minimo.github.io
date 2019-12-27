@@ -1,0 +1,217 @@
+// libs =>
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "_grid.scss";
+@import "_keyframes.scss";
+@import "_reboot.scss";
+// fonts =>
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Ubuntu:400,500,700&display=swap&subset=cyrillic');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+
+// [========[ html >> body{default} ]========]
+
+html body{
+	color: $default-text-color;
+	font-family: $default-font-family;
+	background-color: $default-body-color;
+	@include container();
+}
+
+h1,h2,h3,h4,h5,h6,p{
+	color: rgb(98, 98, 98);
+}
+
+.t-left{
+	text-align: left;
+}
+
+.t-right{
+	text-align: right;
+}
+
+.ibg{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	img{ display: none; }
+}
+
+*{
+	// outline: 0.1vmin solid #ccc;
+}
+
+.wrapper{
+	max-width: 983px;
+	margin: 0 auto;
+}
+
+.block{
+	width: 100%;
+	margin-bottom: 50px;
+	position: relative;
+	.s__title{
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-family: "Ubuntu";
+		color: rgb(180, 173, 158);
+		text-transform: uppercase;
+		line-height: 1.2;
+	}
+	h1,h2,h3,h4,h5{
+		padding: 24px 0;
+	}
+	.s__action{
+		position: absolute;
+		left: 0;
+		bottom: -50px;
+		font-family: "Ubuntu";
+		color: rgb(180, 173, 158);
+		text-transform: uppercase;
+		line-height: 1.2;
+	}
+}
+
+// [========[ body >> header ]========]
+
+.header {}
+
+.header-menu {
+	@include flexbox();
+	justify-content: center;
+	align-items: center;
+	padding: 12px 0;
+	margin-bottom: 30px;
+}
+
+.header-menu_column {
+	@include flexbox();
+	justify-content: center;
+	align-items: center;
+}
+
+.header-menu__logo {
+	font-family: 'Ubuntu',sans-serif;
+	color: #000;
+	font-weight: 400;
+	font-size: 26px;
+	letter-spacing: 3px;
+	text-align: left;
+	width: 100%;
+	padding: 0 20px;
+}
+
+.header-menu__list {
+	width: 100%;
+	@include flexbox();
+	justify-content: space-around;
+	align-items: center;
+}
+
+.header-menu__item {}
+
+.header-menu__link {
+	text-transform: uppercase;
+	color: #555;
+	font-weight: 500;
+	letter-spacing: 1.5px;
+	font-size: 16px;
+	&:hover{
+		color: #000;
+		text-decoration: none;
+	}
+}
+
+// [========[ body >> main >> #hero ]========]
+
+#hero{
+	img{
+		min-height: 529px;
+	}
+	min-height: 529px;
+}
+
+[id^="blog"], {
+	padding: 50px 0;
+	.block__inner {
+		.item {
+			margin-top: 50px;
+			padding: 0 25px;
+			&:hover{
+				text-decoration-color: #555;
+			}
+			.ibg{
+				max-width: 100%;
+				height: 280px;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+				margin-bottom: 20px;
+			}
+			.tag {
+				position: absolute;
+				font-family: "Ubuntu";
+				color: rgb(180, 173, 158);
+				text-transform: uppercase;
+				line-height: 1.2;
+			}
+		}
+	}
+}
+
+#newsletter{
+	width: 100%;
+	height: 200px;
+	text-align: center;
+	background: #f0f0f0;
+	border-radius: 30px;
+	input{
+		width: 400px;
+		background: none;
+		border: 0;
+		border-bottom: 2px solid #333;
+		padding-bottom: 4px;
+	}
+	.btn{
+		margin-left: -40px;
+		border: none;
+		background: none;
+		font-size: 32px;
+		transition: all .1s;
+		&:hover{
+			transform: scale(1.13);
+		}
+	}
+}
+
+// [========[ body >> footer ]========]
+
+.footer{
+	padding: 30px 0;
+	border-top: 1px solid #ccc;
+	a{
+		color: #000;
+	}
+	.footer__social{
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	.footer__social-row{
+		display: flex;
+		align-items: center;
+		margin-left: 15px;
+		a{
+			color: #626262;
+			font-size: 18px;
+			margin: 0 12px;
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+}
+
